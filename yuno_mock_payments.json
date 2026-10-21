@@ -1,0 +1,1643 @@
+[
+  {
+    "payment_id": "PAY-20261014-1000",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 594.53,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:00:00+00:00",
+    "provider_transaction_id": "ADY-688ec58fe5",
+    "request_id": "REQ-0d50ee233439",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:00:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:00:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T08:00:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:00:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1001",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AcquirerX",
+    "amount": 474.44,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:07:00+00:00",
+    "provider_transaction_id": "ACQ-b1f8ea1228",
+    "request_id": "REQ-f07367cda59b",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:07:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:07:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T08:07:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:07:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1002",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AcquirerX",
+    "amount": 451.19,
+    "currency": "USD",
+    "status": "DECLINED",
+    "decline_code": "PROVIDER_TIMEOUT",
+    "provider_message": "Provider timeout",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:14:00+00:00",
+    "provider_transaction_id": "ACQ-863fa1cdb4",
+    "request_id": "REQ-ff0574119f54",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:14:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:14:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T08:14:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "PROVIDER_TIMEOUT"
+      },
+      {
+        "ts": "2026-10-14T08:14:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1003",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 608.25,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:21:00+00:00",
+    "provider_transaction_id": "STR-64d7b74729",
+    "request_id": "REQ-8a7a35413a58",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:21:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:21:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T08:21:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:21:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1004",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 765.98,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:28:00+00:00",
+    "provider_transaction_id": "ADY-f9fac64726",
+    "request_id": "REQ-bec35d54f7d0",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:28:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:28:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T08:28:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:28:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1005",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 484.96,
+    "currency": "HKD",
+    "status": "DECLINED",
+    "decline_code": "PROVIDER_TIMEOUT",
+    "provider_message": "Provider timeout",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T08:35:00+00:00",
+    "provider_transaction_id": "STR-21e786b1d4",
+    "request_id": "REQ-1cec4f62d4e3",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:35:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:35:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T08:35:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "PROVIDER_TIMEOUT"
+      },
+      {
+        "ts": "2026-10-14T08:35:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1006",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 664.38,
+    "currency": "HKD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:42:00+00:00",
+    "provider_transaction_id": "ADY-7afa3e68da",
+    "request_id": "REQ-413a439163cf",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:42:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:42:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T08:42:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:42:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1007",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 41.43,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:49:00+00:00",
+    "provider_transaction_id": "ADY-6c842b87b2",
+    "request_id": "REQ-9c93defcb9c1",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:49:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:49:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T08:49:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:49:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1008",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 307.2,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T08:56:00+00:00",
+    "provider_transaction_id": "ADY-b5b2815999",
+    "request_id": "REQ-835d0f574c3a",
+    "timeline": [
+      {
+        "ts": "2026-10-14T08:56:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T08:56:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T08:56:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T08:56:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1009",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 171.56,
+    "currency": "HKD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T09:03:00+00:00",
+    "provider_transaction_id": "STR-764c96737c",
+    "request_id": "REQ-8ed4881e57a0",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:03:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:03:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T09:03:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:03:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1010",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 429.64,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T09:10:00+00:00",
+    "provider_transaction_id": "ADY-6f493867fe",
+    "request_id": "REQ-96ad10ecda97",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:10:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:10:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T09:10:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:10:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1011",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AcquirerX",
+    "amount": 549.27,
+    "currency": "SGD",
+    "status": "DECLINED",
+    "decline_code": "DO_NOT_HONOR",
+    "provider_message": "Issuer declined the transaction",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T09:17:00+00:00",
+    "provider_transaction_id": "ACQ-9745403e24",
+    "request_id": "REQ-554022f451e6",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:17:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:17:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T09:17:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "DO_NOT_HONOR"
+      },
+      {
+        "ts": "2026-10-14T09:17:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1012",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 217.85,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T09:24:00+00:00",
+    "provider_transaction_id": "STR-e672a05b9f",
+    "request_id": "REQ-cd4c638231dc",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:24:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:24:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T09:24:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:24:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1013",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 526.07,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T09:31:00+00:00",
+    "provider_transaction_id": "STR-98600e57f8",
+    "request_id": "REQ-3ad517fa52f1",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:31:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:31:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T09:31:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:31:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1014",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 116.01,
+    "currency": "HKD",
+    "status": "DECLINED",
+    "decline_code": "3DS_FAILED",
+    "provider_message": "3DS authentication failed",
+    "webhook_status": "NOT_SENT",
+    "created_at": "2026-10-14T09:38:00+00:00",
+    "provider_transaction_id": "ADY-4dee35b9d9",
+    "request_id": "REQ-a588f1d2c910",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:38:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:38:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T09:38:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "3DS_FAILED"
+      },
+      {
+        "ts": "2026-10-14T09:38:08+00:00",
+        "event": "WEBHOOK_NOT_SENT"
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1015",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AcquirerX",
+    "amount": 292.79,
+    "currency": "TWD",
+    "status": "PENDING",
+    "decline_code": null,
+    "provider_message": "Awaiting provider confirmation",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T09:45:00+00:00",
+    "provider_transaction_id": "ACQ-1fffc56884",
+    "request_id": "REQ-82248c105698",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:45:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:45:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T09:45:05+00:00",
+        "event": "PROVIDER_PENDING"
+      },
+      {
+        "ts": "2026-10-14T09:45:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1016",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 689.58,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T09:52:00+00:00",
+    "provider_transaction_id": "ADY-a3d98c86c2",
+    "request_id": "REQ-2281acf7387a",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:52:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:52:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T09:52:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:52:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1017",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 310.89,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T09:59:00+00:00",
+    "provider_transaction_id": "STR-882d0da3ee",
+    "request_id": "REQ-6a4079183f5f",
+    "timeline": [
+      {
+        "ts": "2026-10-14T09:59:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T09:59:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T09:59:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T09:59:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1018",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AcquirerX",
+    "amount": 545.83,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T10:06:00+00:00",
+    "provider_transaction_id": "ACQ-152b1226f9",
+    "request_id": "REQ-397543e8b417",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:06:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:06:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T10:06:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T10:06:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1019",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AcquirerX",
+    "amount": 93.68,
+    "currency": "HKD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T10:13:00+00:00",
+    "provider_transaction_id": "ACQ-e4c99d6282",
+    "request_id": "REQ-841ced52669a",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:13:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:13:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T10:13:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T10:13:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1020",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AcquirerX",
+    "amount": 777.65,
+    "currency": "HKD",
+    "status": "PENDING",
+    "decline_code": null,
+    "provider_message": "Awaiting provider confirmation",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T10:20:00+00:00",
+    "provider_transaction_id": "ACQ-e1e4f53ba5",
+    "request_id": "REQ-0cb44bbf82a3",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:20:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:20:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T10:20:05+00:00",
+        "event": "PROVIDER_PENDING"
+      },
+      {
+        "ts": "2026-10-14T10:20:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1021",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 126.51,
+    "currency": "SGD",
+    "status": "DECLINED",
+    "decline_code": "DO_NOT_HONOR",
+    "provider_message": "Issuer declined the transaction",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T10:27:00+00:00",
+    "provider_transaction_id": "STR-5568f7c7c2",
+    "request_id": "REQ-fa1325c26ce0",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:27:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:27:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T10:27:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "DO_NOT_HONOR"
+      },
+      {
+        "ts": "2026-10-14T10:27:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1022",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 743.63,
+    "currency": "USD",
+    "status": "PENDING",
+    "decline_code": null,
+    "provider_message": "Awaiting provider confirmation",
+    "webhook_status": "NOT_SENT",
+    "created_at": "2026-10-14T10:34:00+00:00",
+    "provider_transaction_id": "ADY-93d6e2582c",
+    "request_id": "REQ-d7066069f5c0",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:34:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:34:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T10:34:05+00:00",
+        "event": "PROVIDER_PENDING"
+      },
+      {
+        "ts": "2026-10-14T10:34:08+00:00",
+        "event": "WEBHOOK_NOT_SENT"
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1023",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 196.49,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T10:41:00+00:00",
+    "provider_transaction_id": "ADY-a52114638f",
+    "request_id": "REQ-14cb458f6abc",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:41:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:41:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T10:41:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T10:41:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1024",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 782.5,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T10:48:00+00:00",
+    "provider_transaction_id": "STR-0846fef292",
+    "request_id": "REQ-a3cd7e66234d",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:48:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:48:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T10:48:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T10:48:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1025",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 215.72,
+    "currency": "SGD",
+    "status": "PENDING",
+    "decline_code": null,
+    "provider_message": "Awaiting provider confirmation",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T10:55:00+00:00",
+    "provider_transaction_id": "STR-10b9943d26",
+    "request_id": "REQ-659dd8e3dd68",
+    "timeline": [
+      {
+        "ts": "2026-10-14T10:55:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T10:55:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T10:55:05+00:00",
+        "event": "PROVIDER_PENDING"
+      },
+      {
+        "ts": "2026-10-14T10:55:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1026",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AcquirerX",
+    "amount": 571.79,
+    "currency": "SGD",
+    "status": "DECLINED",
+    "decline_code": "PROVIDER_TIMEOUT",
+    "provider_message": "Provider timeout",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T11:02:00+00:00",
+    "provider_transaction_id": "ACQ-bd90055bc2",
+    "request_id": "REQ-2176d159e0e6",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:02:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:02:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T11:02:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "PROVIDER_TIMEOUT"
+      },
+      {
+        "ts": "2026-10-14T11:02:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1027",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "StripeMock",
+    "amount": 202.08,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:09:00+00:00",
+    "provider_transaction_id": "STR-8da6d714f9",
+    "request_id": "REQ-38d4b1324581",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:09:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:09:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T11:09:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T11:09:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1028",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 10.72,
+    "currency": "SGD",
+    "status": "DECLINED",
+    "decline_code": "DO_NOT_HONOR",
+    "provider_message": "Issuer declined the transaction",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:16:00+00:00",
+    "provider_transaction_id": "ADY-10cc7c3391",
+    "request_id": "REQ-5d49479ad3c7",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:16:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:16:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T11:16:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "DO_NOT_HONOR"
+      },
+      {
+        "ts": "2026-10-14T11:16:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1029",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 413.75,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:23:00+00:00",
+    "provider_transaction_id": "STR-b02532f61a",
+    "request_id": "REQ-9371c7d5620d",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:23:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:23:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T11:23:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T11:23:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1030",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 198.18,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:30:00+00:00",
+    "provider_transaction_id": "ADY-5ca20f8d5b",
+    "request_id": "REQ-42667da19210",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:30:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:30:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T11:30:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T11:30:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1031",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 286.67,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:37:00+00:00",
+    "provider_transaction_id": "ADY-dc1f54c268",
+    "request_id": "REQ-020ab26f2253",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:37:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:37:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T11:37:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T11:37:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1032",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AcquirerX",
+    "amount": 53.19,
+    "currency": "USD",
+    "status": "DECLINED",
+    "decline_code": "DO_NOT_HONOR",
+    "provider_message": "Issuer declined the transaction",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:44:00+00:00",
+    "provider_transaction_id": "ACQ-e0dcbac554",
+    "request_id": "REQ-566290d127fe",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:44:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:44:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T11:44:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "DO_NOT_HONOR"
+      },
+      {
+        "ts": "2026-10-14T11:44:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1033",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AcquirerX",
+    "amount": 116.44,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T11:51:00+00:00",
+    "provider_transaction_id": "ACQ-fe48c3b769",
+    "request_id": "REQ-16fadd751e91",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:51:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:51:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T11:51:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T11:51:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1034",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 45.22,
+    "currency": "USD",
+    "status": "PENDING",
+    "decline_code": null,
+    "provider_message": "Awaiting provider confirmation",
+    "webhook_status": "NOT_SENT",
+    "created_at": "2026-10-14T11:58:00+00:00",
+    "provider_transaction_id": "STR-3719bbe462",
+    "request_id": "REQ-4eb91805689f",
+    "timeline": [
+      {
+        "ts": "2026-10-14T11:58:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T11:58:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T11:58:05+00:00",
+        "event": "PROVIDER_PENDING"
+      },
+      {
+        "ts": "2026-10-14T11:58:08+00:00",
+        "event": "WEBHOOK_NOT_SENT"
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1035",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 328.1,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:05:00+00:00",
+    "provider_transaction_id": "ADY-420dbfb331",
+    "request_id": "REQ-d7c96bf61a10",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:05:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:05:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:05:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:05:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1036",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 6.71,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T12:12:00+00:00",
+    "provider_transaction_id": "ADY-668b862129",
+    "request_id": "REQ-eecb76cdf338",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:12:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:12:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:12:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:12:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1037",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "StripeMock",
+    "amount": 558.79,
+    "currency": "TWD",
+    "status": "DECLINED",
+    "decline_code": "PROVIDER_TIMEOUT",
+    "provider_message": "Provider timeout",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:19:00+00:00",
+    "provider_transaction_id": "STR-566db2bb28",
+    "request_id": "REQ-4e6f54b8418d",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:19:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:19:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T12:19:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "PROVIDER_TIMEOUT"
+      },
+      {
+        "ts": "2026-10-14T12:19:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1038",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 465.45,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:26:00+00:00",
+    "provider_transaction_id": "ADY-c8735d2401",
+    "request_id": "REQ-f1d271a8c796",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:26:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:26:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:26:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:26:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1039",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 404.77,
+    "currency": "TWD",
+    "status": "DECLINED",
+    "decline_code": "INSUFFICIENT_FUNDS",
+    "provider_message": "Insufficient funds",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:33:00+00:00",
+    "provider_transaction_id": "ADY-5e8694a054",
+    "request_id": "REQ-76c9885fd287",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:33:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:33:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:33:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "INSUFFICIENT_FUNDS"
+      },
+      {
+        "ts": "2026-10-14T12:33:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1040",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 59.47,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:40:00+00:00",
+    "provider_transaction_id": "ADY-f5ab2ef190",
+    "request_id": "REQ-aa208984c4be",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:40:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:40:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:40:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:40:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1041",
+    "merchant_id": "MRC_APAC_002",
+    "provider": "AdyenMock",
+    "amount": 465.24,
+    "currency": "SGD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:47:00+00:00",
+    "provider_transaction_id": "ADY-111785f46d",
+    "request_id": "REQ-804da65b659a",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:47:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:47:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T12:47:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:47:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1042",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AcquirerX",
+    "amount": 748.09,
+    "currency": "HKD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T12:54:00+00:00",
+    "provider_transaction_id": "ACQ-ceeb580f2c",
+    "request_id": "REQ-c12405c6b224",
+    "timeline": [
+      {
+        "ts": "2026-10-14T12:54:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T12:54:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T12:54:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T12:54:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1043",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 109.05,
+    "currency": "TWD",
+    "status": "DECLINED",
+    "decline_code": "PROVIDER_TIMEOUT",
+    "provider_message": "Provider timeout",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T13:01:00+00:00",
+    "provider_transaction_id": "STR-b951cf9f41",
+    "request_id": "REQ-b4efc5d49fa0",
+    "timeline": [
+      {
+        "ts": "2026-10-14T13:01:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T13:01:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T13:01:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "PROVIDER_TIMEOUT"
+      },
+      {
+        "ts": "2026-10-14T13:01:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1044",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "AdyenMock",
+    "amount": 498.82,
+    "currency": "TWD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T13:08:00+00:00",
+    "provider_transaction_id": "ADY-a74a4013eb",
+    "request_id": "REQ-398b6a468a81",
+    "timeline": [
+      {
+        "ts": "2026-10-14T13:08:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T13:08:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T13:08:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T13:08:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1045",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AdyenMock",
+    "amount": 110.3,
+    "currency": "HKD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "DELIVERED",
+    "created_at": "2026-10-14T13:15:00+00:00",
+    "provider_transaction_id": "ADY-e067cd66e5",
+    "request_id": "REQ-e0a183803f7a",
+    "timeline": [
+      {
+        "ts": "2026-10-14T13:15:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T13:15:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AdyenMock"
+      },
+      {
+        "ts": "2026-10-14T13:15:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T13:15:07+00:00",
+        "event": "WEBHOOK_DELIVERED",
+        "http_status": 200
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1046",
+    "merchant_id": "MRC_APAC_001",
+    "provider": "StripeMock",
+    "amount": 130.41,
+    "currency": "HKD",
+    "status": "DECLINED",
+    "decline_code": "3DS_FAILED",
+    "provider_message": "3DS authentication failed",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T13:22:00+00:00",
+    "provider_transaction_id": "STR-d94b2a2a59",
+    "request_id": "REQ-0576215fe8dc",
+    "timeline": [
+      {
+        "ts": "2026-10-14T13:22:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T13:22:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "StripeMock"
+      },
+      {
+        "ts": "2026-10-14T13:22:04+00:00",
+        "event": "PROVIDER_DECLINED",
+        "code": "3DS_FAILED"
+      },
+      {
+        "ts": "2026-10-14T13:22:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  },
+  {
+    "payment_id": "PAY-20261014-1047",
+    "merchant_id": "MRC_APAC_003",
+    "provider": "AcquirerX",
+    "amount": 535.95,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "decline_code": null,
+    "provider_message": "Approved",
+    "webhook_status": "FAILED",
+    "created_at": "2026-10-14T13:29:00+00:00",
+    "provider_transaction_id": "ACQ-99d2817e5d",
+    "request_id": "REQ-90c697017dc3",
+    "timeline": [
+      {
+        "ts": "2026-10-14T13:29:00+00:00",
+        "event": "PAYMENT_RECEIVED"
+      },
+      {
+        "ts": "2026-10-14T13:29:01+00:00",
+        "event": "ROUTED_TO_PROVIDER",
+        "provider": "AcquirerX"
+      },
+      {
+        "ts": "2026-10-14T13:29:03+00:00",
+        "event": "PROVIDER_APPROVED"
+      },
+      {
+        "ts": "2026-10-14T13:29:08+00:00",
+        "event": "WEBHOOK_FAILED",
+        "http_status": 500
+      }
+    ]
+  }
+]
