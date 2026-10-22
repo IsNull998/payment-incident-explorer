@@ -1,710 +1,294 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Payment Incident Explorer</title>
-
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f7f8fa;
-      color: #111;
-    }
+    body{font-family:Arial,sans-serif;margin:40px;background:#f7f8fa;color:#111}
+    h1{margin-bottom:6px}.subtitle{color:#666;margin-bottom:30px}
+    .section-title{margin-top:32px;margin-bottom:14px;font-size:20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+    .card,.filters,.detail-panel,.system-status,.incident-card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:20px}
+    .label{color:#666;font-size:14px;margin-bottom:10px}.value{font-size:30px;font-weight:bold}
+    .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+    .filter-group label{display:block;margin-bottom:6px;font-size:14px;color:#555}
+    select{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;background:#fff}
+    .button-row{margin-top:14px}button{padding:10px 18px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer}
+    button:hover{background:#f0f0f0}
+    .table-container{margin-top:18px;overflow-x:auto;background:#fff;border:1px solid #ddd;border-radius:10px}
+    table{width:100%;border-collapse:collapse}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eee;white-space:nowrap}
+    th{background:#f3f4f6;font-size:14px}td{font-size:14px}tbody tr{cursor:pointer}tbody tr:hover{background:#f8fafc}
+    .result-count{margin-top:14px;color:#555}
+    .detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .detail-item{border-bottom:1px solid #eee;padding-bottom:10px}
+    .detail-label{color:#666;font-size:13px;margin-bottom:4px}.detail-value{font-size:14px;word-break:break-word}
+    .timeline{margin-top:20px;padding-left:0;list-style:none}.timeline li{border-left:3px solid #bbb;padding:0 0 18px 16px;margin-left:4px}
+    .timeline-time{color:#666;font-size:13px;margin-bottom:4px}.timeline-event{font-weight:bold}.timeline-extra{color:#555;font-size:13px;margin-top:4px}
+    .placeholder{color:#777}.system-status{margin-top:30px;padding:16px 20px}.error{color:#b00020}
 
-    h1 {
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    .section-title {
-      margin-top: 32px;
-      margin-bottom: 14px;
-      font-size: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .label {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .value {
-      font-size: 30px;
-      font-weight: bold;
-    }
-
-    .filters {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .filter-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: white;
-    }
-
-    .button-row {
-      margin-top: 14px;
-    }
-
-    button {
-      padding: 10px 18px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #f0f0f0;
-    }
-
-    .table-container {
-      margin-top: 18px;
-      overflow-x: auto;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 12px 14px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-      white-space: nowrap;
-    }
-
-    th {
-      background: #f3f4f6;
-      font-size: 14px;
-    }
-
-    td {
-      font-size: 14px;
-    }
-
-    .result-count {
-      margin-top: 14px;
-      color: #555;
-    }
-
-    .status-success {
-      font-weight: bold;
-    }
-
-    .status-declined {
-      font-weight: bold;
-    }
-
-    .status-pending {
-      font-weight: bold;
-    }
-
-    .system-status {
-      margin-top: 30px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 16px 20px;
-    }
-
-    .error {
-      color: #b00020;
-    }
+    .incident-list{display:grid;gap:16px}
+    .incident-header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+    .incident-provider{font-size:18px;font-weight:bold}
+    .severity{font-size:12px;font-weight:bold;border:1px solid #bbb;border-radius:999px;padding:5px 9px}
+    .severity-high{border-color:#b00020;color:#b00020}
+    .severity-medium{border-color:#8a5a00;color:#8a5a00}
+    .incident-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:14px}
+    .incident-meta div{font-size:14px}
+    .incident-reasons{margin:8px 0 0 20px}
+    .incident-reasons li{margin-bottom:5px}
   </style>
 </head>
-
 <body>
-
   <h1>Payment Incident Explorer</h1>
+  <div class="subtitle">APAC payment operations dashboard</div>
 
-  <div class="subtitle">
-    APAC payment operations dashboard
-  </div>
-
-
-  <!-- Payment Summary -->
-
-  <h2 class="section-title">
-    Payment Summary
-  </h2>
-
+  <h2 class="section-title">Payment Summary</h2>
   <div class="grid">
-
-    <div class="card">
-      <div class="label">Total Transactions</div>
-      <div class="value" id="total">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Success</div>
-      <div class="value" id="success">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Declined</div>
-      <div class="value" id="declined">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Pending</div>
-      <div class="value" id="pending">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Failure Rate</div>
-      <div class="value" id="failure-rate">-</div>
-    </div>
-
+    <div class="card"><div class="label">Total Transactions</div><div class="value" id="total">-</div></div>
+    <div class="card"><div class="label">Success</div><div class="value" id="success">-</div></div>
+    <div class="card"><div class="label">Declined</div><div class="value" id="declined">-</div></div>
+    <div class="card"><div class="label">Pending</div><div class="value" id="pending">-</div></div>
+    <div class="card"><div class="label">Failure Rate</div><div class="value" id="failure-rate">-</div></div>
   </div>
 
-
-  <!-- Webhook Summary -->
-
-  <h2 class="section-title">
-    Webhook Summary
-  </h2>
-
+  <h2 class="section-title">Webhook Summary</h2>
   <div class="grid">
-
-    <div class="card">
-      <div class="label">Delivered</div>
-      <div class="value" id="webhook-delivered">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Failed</div>
-      <div class="value" id="webhook-failed">-</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Not Sent</div>
-      <div class="value" id="webhook-not-sent">-</div>
-    </div>
-
+    <div class="card"><div class="label">Delivered</div><div class="value" id="webhook-delivered">-</div></div>
+    <div class="card"><div class="label">Failed</div><div class="value" id="webhook-failed">-</div></div>
+    <div class="card"><div class="label">Not Sent</div><div class="value" id="webhook-not-sent">-</div></div>
   </div>
 
-
-  <!-- Investigation Filters -->
-
-  <h2 class="section-title">
-    Investigation Filters
-  </h2>
-
-  <div class="filters">
-
-    <div class="filter-group">
-      <label for="merchant-filter">
-        Merchant
-      </label>
-
-      <select id="merchant-filter">
-        <option value="">All Merchants</option>
-      </select>
-    </div>
-
-
-    <div class="filter-group">
-      <label for="provider-filter">
-        Provider
-      </label>
-
-      <select id="provider-filter">
-        <option value="">All Providers</option>
-      </select>
-    </div>
-
-
-    <div class="filter-group">
-      <label for="status-filter">
-        Payment Status
-      </label>
-
-      <select id="status-filter">
-        <option value="">All Statuses</option>
-        <option value="SUCCESS">SUCCESS</option>
-        <option value="DECLINED">DECLINED</option>
-        <option value="PENDING">PENDING</option>
-      </select>
-    </div>
-
-
-    <div class="filter-group">
-      <label for="webhook-filter">
-        Webhook Status
-      </label>
-
-      <select id="webhook-filter">
-        <option value="">All Webhook Statuses</option>
-        <option value="DELIVERED">DELIVERED</option>
-        <option value="FAILED">FAILED</option>
-        <option value="NOT_SENT">NOT_SENT</option>
-      </select>
-    </div>
-
-  </div>
-
-
-  <div class="button-row">
-    <button id="reset-button">
-      Reset Filters
-    </button>
-  </div>
-
-
-  <!-- Transactions -->
-
-  <h2 class="section-title">
-    Transactions
-  </h2>
-
+  <h2 class="section-title">Detected Incidents</h2>
   <div class="result-count">
-    Showing
-    <strong id="result-count">0</strong>
-    transaction(s)
+    <strong id="incident-count">0</strong> suspicious incident window(s) detected
+  </div>
+  <div class="incident-list" id="incident-list"></div>
+
+  <h2 class="section-title">Investigation Filters</h2>
+  <div class="filters">
+    <div class="filter-group"><label for="merchant-filter">Merchant</label><select id="merchant-filter"><option value="">All Merchants</option></select></div>
+    <div class="filter-group"><label for="provider-filter">Provider</label><select id="provider-filter"><option value="">All Providers</option></select></div>
+    <div class="filter-group"><label for="status-filter">Payment Status</label><select id="status-filter"><option value="">All Statuses</option><option value="SUCCESS">SUCCESS</option><option value="DECLINED">DECLINED</option><option value="PENDING">PENDING</option></select></div>
+    <div class="filter-group"><label for="webhook-filter">Webhook Status</label><select id="webhook-filter"><option value="">All Webhook Statuses</option><option value="DELIVERED">DELIVERED</option><option value="FAILED">FAILED</option><option value="NOT_SENT">NOT_SENT</option></select></div>
   </div>
 
+  <div class="button-row"><button id="reset-button">Reset Filters</button></div>
 
+  <h2 class="section-title">Transactions</h2>
+  <div class="result-count">Showing <strong id="result-count">0</strong> transaction(s)</div>
   <div class="table-container">
-
     <table>
-
-      <thead>
-        <tr>
-          <th>Payment ID</th>
-          <th>Merchant</th>
-          <th>Provider</th>
-          <th>Amount</th>
-          <th>Status</th>
-          <th>Webhook</th>
-          <th>Created At</th>
-        </tr>
-      </thead>
-
-      <tbody id="transaction-table-body">
-
-      </tbody>
-
+      <thead><tr><th>Payment ID</th><th>Merchant</th><th>Provider</th><th>Amount</th><th>Status</th><th>Webhook</th><th>Created At</th></tr></thead>
+      <tbody id="transaction-table-body"></tbody>
     </table>
-
   </div>
 
-
-  <!-- Backend Status -->
-
-  <div class="system-status">
-    <strong>Backend status:</strong>
-    <span id="health">Checking...</span>
+  <h2 class="section-title">Transaction Detail</h2>
+  <div class="detail-panel" id="detail-panel">
+    <div class="placeholder">Click a transaction row to inspect its details and timeline.</div>
   </div>
 
-
-  <script>
-
-    const merchantFilter =
-      document.getElementById('merchant-filter');
-
-    const providerFilter =
-      document.getElementById('provider-filter');
-
-    const statusFilter =
-      document.getElementById('status-filter');
-
-    const webhookFilter =
-      document.getElementById('webhook-filter');
-
-
-    async function loadHealth() {
-
-      const response =
-        await fetch('/health');
-
-      const data =
-        await response.json();
-
-      document.getElementById('health')
-        .textContent = data.status;
-    }
-
-
-    async function loadSummary() {
-
-      const response =
-        await fetch('/api/summary');
-
-      if (!response.ok) {
-        throw new Error('Failed to load summary');
-      }
-
-      const summary =
-        await response.json();
-
-
-      document.getElementById('total')
-        .textContent = summary.total;
-
-      document.getElementById('success')
-        .textContent = summary.success;
-
-      document.getElementById('declined')
-        .textContent = summary.declined;
-
-      document.getElementById('pending')
-        .textContent = summary.pending;
-
-      document.getElementById('failure-rate')
-        .textContent = summary.failure_rate + '%';
-
-      document.getElementById('webhook-delivered')
-        .textContent = summary.webhook_delivered;
-
-      document.getElementById('webhook-failed')
-        .textContent = summary.webhook_failed;
-
-      document.getElementById('webhook-not-sent')
-        .textContent = summary.webhook_not_sent;
-    }
-
-
-    function addOptions(selectElement, values) {
-
-      values
-        .sort()
-        .forEach(value => {
-
-          const option =
-            document.createElement('option');
-
-          option.value = value;
-          option.textContent = value;
-
-          selectElement.appendChild(option);
-
-        });
-    }
-
-
-    async function initializeFilters() {
-
-      const response =
-        await fetch('/api/payments');
-
-      const data =
-        await response.json();
-
-      const payments =
-        data.items;
-
-
-      const merchants =
-        [...new Set(
-          payments
-            .map(p => p.merchant_id)
-            .filter(Boolean)
-        )];
-
-
-      const providers =
-        [...new Set(
-          payments
-            .map(p => p.provider)
-            .filter(Boolean)
-        )];
-
-
-      addOptions(
-        merchantFilter,
-        merchants
-      );
-
-
-      addOptions(
-        providerFilter,
-        providers
-      );
-    }
-
-
-    function buildQueryString() {
-
-      const params =
-        new URLSearchParams();
-
-
-      if (merchantFilter.value) {
-
-        params.append(
-          'merchant',
-          merchantFilter.value
-        );
-      }
-
-
-      if (providerFilter.value) {
-
-        params.append(
-          'provider',
-          providerFilter.value
-        );
-      }
-
-
-      if (statusFilter.value) {
-
-        params.append(
-          'status',
-          statusFilter.value
-        );
-      }
-
-
-      if (webhookFilter.value) {
-
-        params.append(
-          'webhook_status',
-          webhookFilter.value
-        );
-      }
-
-
-      const query =
-        params.toString();
-
-
-      return query
-        ? '?' + query
-        : '';
-    }
-
-
-    async function loadTransactions() {
-
-      const query =
-        buildQueryString();
-
-
-      const response =
-        await fetch(
-          '/api/payments' + query
-        );
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          'Failed to load transactions'
-        );
-      }
-
-
-      const data =
-        await response.json();
-
-
-      document.getElementById(
-        'result-count'
-      ).textContent =
-        data.count;
-
-
-      renderTransactions(
-        data.items
-      );
-    }
-
-
-    function renderTransactions(payments) {
-
-      const tbody =
-        document.getElementById(
-          'transaction-table-body'
-        );
-
-
-      tbody.innerHTML = '';
-
-
-      if (payments.length === 0) {
-
-        const row =
-          document.createElement('tr');
-
-
-        row.innerHTML =
-          `
-          <td colspan="7">
-            No matching transactions found.
-          </td>
-          `;
-
-
-        tbody.appendChild(row);
-
-        return;
-      }
-
-
-      payments.forEach(payment => {
-
-        const row =
-          document.createElement('tr');
-
-
-        row.innerHTML =
-          `
-          <td>
-            ${payment.payment_id ?? '-'}
-          </td>
-
-          <td>
-            ${payment.merchant_id ?? '-'}
-          </td>
-
-          <td>
-            ${payment.provider ?? '-'}
-          </td>
-
-          <td>
-            ${payment.amount ?? '-'}
-            ${payment.currency ?? ''}
-          </td>
-
-          <td>
-            ${payment.status ?? '-'}
-          </td>
-
-          <td>
-            ${payment.webhook_status ?? '-'}
-          </td>
-
-          <td>
-            ${payment.created_at ?? '-'}
-          </td>
-          `;
-
-
-        tbody.appendChild(row);
-
-      });
-    }
-
-
-    function resetFilters() {
-
-      merchantFilter.value = '';
-      providerFilter.value = '';
-      statusFilter.value = '';
-      webhookFilter.value = '';
-
-      loadTransactions();
-    }
-
-
-    merchantFilter.addEventListener(
-      'change',
-      loadTransactions
-    );
-
-
-    providerFilter.addEventListener(
-      'change',
-      loadTransactions
-    );
-
-
-    statusFilter.addEventListener(
-      'change',
-      loadTransactions
-    );
-
-
-    webhookFilter.addEventListener(
-      'change',
-      loadTransactions
-    );
-
-
-    document.getElementById(
-      'reset-button'
-    ).addEventListener(
-      'click',
-      resetFilters
-    );
-
-
-    async function initialize() {
-
-      try {
-
-        await loadHealth();
-
-        await loadSummary();
-
-        await initializeFilters();
-
-        await loadTransactions();
-
-      } catch (error) {
-
-        console.error(error);
-
-        const healthElement =
-          document.getElementById(
-            'health'
-          );
-
-        healthElement.textContent =
-          'error';
-
-        healthElement.classList.add(
-          'error'
-        );
-      }
-    }
-
-
-    initialize();
-
-  </script>
-
+  <div class="system-status"><strong>Backend status:</strong> <span id="health">Checking...</span></div>
+
+<script>
+const merchantFilter=document.getElementById('merchant-filter');
+const providerFilter=document.getElementById('provider-filter');
+const statusFilter=document.getElementById('status-filter');
+const webhookFilter=document.getElementById('webhook-filter');
+
+async function loadHealth(){
+  const r=await fetch('/health');
+  if(!r.ok) throw new Error('Health check failed');
+  const d=await r.json();
+  document.getElementById('health').textContent=d.status;
+}
+
+async function loadSummary(){
+  const r=await fetch('/api/summary');
+  if(!r.ok) throw new Error('Failed to load summary');
+  const s=await r.json();
+  document.getElementById('total').textContent=s.total;
+  document.getElementById('success').textContent=s.success;
+  document.getElementById('declined').textContent=s.declined;
+  document.getElementById('pending').textContent=s.pending;
+  document.getElementById('failure-rate').textContent=s.failure_rate+'%';
+  document.getElementById('webhook-delivered').textContent=s.webhook_delivered;
+  document.getElementById('webhook-failed').textContent=s.webhook_failed;
+  document.getElementById('webhook-not-sent').textContent=s.webhook_not_sent;
+}
+
+async function loadIncidents(){
+  const r=await fetch('/api/incidents');
+  if(!r.ok) throw new Error('Failed to load incidents');
+  const data=await r.json();
+
+  document.getElementById('incident-count').textContent=data.count;
+
+  const container=document.getElementById('incident-list');
+  container.innerHTML='';
+
+  if(data.count===0){
+    container.innerHTML='<div class="incident-card placeholder">No suspicious incident windows detected.</div>';
+    return;
+  }
+
+  data.items
+    .sort((a,b)=>{
+      if(a.severity===b.severity) return a.window_start.localeCompare(b.window_start);
+      return a.severity==='HIGH' ? -1 : 1;
+    })
+    .forEach(incident=>{
+      const card=document.createElement('div');
+      card.className='incident-card';
+
+      const severityClass=incident.severity==='HIGH'
+        ? 'severity severity-high'
+        : 'severity severity-medium';
+
+      const reasons=(incident.reason??[])
+        .map(reason=>`<li>${reason}</li>`)
+        .join('');
+
+      const paymentIds=(incident.payment_ids??[]).join(', ') || '-';
+
+      card.innerHTML=`
+        <div class="incident-header">
+          <div class="incident-provider">${incident.provider ?? '-'}</div>
+          <div class="${severityClass}">${incident.severity ?? '-'}</div>
+        </div>
+
+        <div class="incident-meta">
+          <div><strong>Window:</strong><br>${incident.window_start ?? '-'} → ${incident.window_end ?? '-'}</div>
+          <div><strong>Affected transactions:</strong><br>${incident.affected_transactions ?? 0}</div>
+          <div><strong>Payment failure rate:</strong><br>${incident.payment_failure_rate ?? 0}%</div>
+          <div><strong>Webhook failure rate:</strong><br>${incident.webhook_failure_rate ?? 0}%</div>
+          <div><strong>Provider timeouts:</strong><br>${incident.provider_timeout_count ?? 0}</div>
+          <div><strong>Payment IDs:</strong><br>${paymentIds}</div>
+        </div>
+
+        <strong>Why flagged</strong>
+        <ul class="incident-reasons">${reasons}</ul>
+      `;
+
+      container.appendChild(card);
+    });
+}
+
+function addOptions(el,values){
+  values.sort().forEach(v=>{
+    const o=document.createElement('option');
+    o.value=v;
+    o.textContent=v;
+    el.appendChild(o);
+  });
+}
+
+async function initializeFilters(){
+  const r=await fetch('/api/payments');
+  if(!r.ok) throw new Error('Failed to load payments');
+  const d=await r.json();
+  const p=d.items;
+
+  addOptions(merchantFilter,[...new Set(p.map(x=>x.merchant_id).filter(Boolean))]);
+  addOptions(providerFilter,[...new Set(p.map(x=>x.provider).filter(Boolean))]);
+}
+
+function buildQueryString(){
+  const p=new URLSearchParams();
+  if(merchantFilter.value)p.append('merchant',merchantFilter.value);
+  if(providerFilter.value)p.append('provider',providerFilter.value);
+  if(statusFilter.value)p.append('status',statusFilter.value);
+  if(webhookFilter.value)p.append('webhook_status',webhookFilter.value);
+  const q=p.toString();
+  return q?'?'+q:'';
+}
+
+async function loadTransactions(){
+  const r=await fetch('/api/payments'+buildQueryString());
+  if(!r.ok)throw new Error('Failed to load transactions');
+  const d=await r.json();
+  document.getElementById('result-count').textContent=d.count;
+  renderTransactions(d.items);
+  clearTransactionDetail();
+}
+
+function renderTransactions(payments){
+  const tbody=document.getElementById('transaction-table-body');
+  tbody.innerHTML='';
+
+  if(payments.length===0){
+    tbody.innerHTML='<tr><td colspan="7">No matching transactions found.</td></tr>';
+    return;
+  }
+
+  payments.forEach(payment=>{
+    const row=document.createElement('tr');
+    row.innerHTML=`<td>${payment.payment_id??'-'}</td><td>${payment.merchant_id??'-'}</td><td>${payment.provider??'-'}</td><td>${payment.amount??'-'} ${payment.currency??''}</td><td>${payment.status??'-'}</td><td>${payment.webhook_status??'-'}</td><td>${payment.created_at??'-'}</td>`;
+    row.addEventListener('click',()=>showTransactionDetail(payment));
+    tbody.appendChild(row);
+  });
+}
+
+function clearTransactionDetail(){
+  document.getElementById('detail-panel').innerHTML='<div class="placeholder">Click a transaction row to inspect its details and timeline.</div>';
+}
+
+function showTransactionDetail(payment){
+  const timeline=Array.isArray(payment.timeline)?payment.timeline:[];
+  const events=timeline.length
+    ? timeline.map(e=>`<li><div class="timeline-time">${e.ts??'-'}</div><div class="timeline-event">${e.event??'-'}</div><div class="timeline-extra">${e.provider?'Provider: '+e.provider:''}${e.code?' | Code: '+e.code:''}${e.http_status?' | HTTP: '+e.http_status:''}</div></li>`).join('')
+    : '<li>No timeline events available.</li>';
+
+  document.getElementById('detail-panel').innerHTML=`
+    <div class="detail-grid">
+      <div class="detail-item"><div class="detail-label">Payment ID</div><div class="detail-value">${payment.payment_id??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Merchant</div><div class="detail-value">${payment.merchant_id??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Provider</div><div class="detail-value">${payment.provider??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Amount</div><div class="detail-value">${payment.amount??'-'} ${payment.currency??''}</div></div>
+      <div class="detail-item"><div class="detail-label">Payment Status</div><div class="detail-value">${payment.status??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Webhook Status</div><div class="detail-value">${payment.webhook_status??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Request ID</div><div class="detail-value">${payment.request_id??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Provider Transaction ID</div><div class="detail-value">${payment.provider_transaction_id??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Decline Code</div><div class="detail-value">${payment.decline_code??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Provider Message</div><div class="detail-value">${payment.provider_message??'-'}</div></div>
+      <div class="detail-item"><div class="detail-label">Created At</div><div class="detail-value">${payment.created_at??'-'}</div></div>
+    </div>
+    <h3>Event Timeline</h3>
+    <ul class="timeline">${events}</ul>
+  `;
+}
+
+function resetFilters(){
+  merchantFilter.value='';
+  providerFilter.value='';
+  statusFilter.value='';
+  webhookFilter.value='';
+  loadTransactions();
+}
+
+merchantFilter.addEventListener('change',loadTransactions);
+providerFilter.addEventListener('change',loadTransactions);
+statusFilter.addEventListener('change',loadTransactions);
+webhookFilter.addEventListener('change',loadTransactions);
+document.getElementById('reset-button').addEventListener('click',resetFilters);
+
+async function initialize(){
+  try{
+    await loadHealth();
+    await loadSummary();
+    await loadIncidents();
+    await initializeFilters();
+    await loadTransactions();
+  }catch(error){
+    console.error(error);
+    const el=document.getElementById('health');
+    el.textContent='error';
+    el.classList.add('error');
+  }
+}
+
+initialize();
+</script>
 </body>
 </html>
